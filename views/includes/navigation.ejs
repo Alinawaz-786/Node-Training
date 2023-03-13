@@ -6,4 +6,28 @@
 
         </ul>
     </nav>
-</header>
+    <header class="main-header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">NODE</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <% if(isAuthenticated) {%>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="/">Shop</a></li>
+                        <% } %>
+                            <li><a href="/products">Products</a></li>
+                            <li><a href="/cart">Carts</a></li>
+                            <li><a href="/user/list">Users</a></li>
+                            <li><a href="/get-order">Orders</a></li>
+                            <% if(!isAuthenticated) {%>
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/signup">Sign Up</a></li>
+                                <% }else{ %>
+                                    <li><a href="/logout">LogOut</a></li>
+                                    <% } %>
+                </ul>
+            </div>
+        </nav>
+    </header>
